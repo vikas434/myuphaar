@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyUphaar - Kids Content Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"], input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e7f3fe;
+            border-left: 6px solid #2196F3;
+        }
+        .image {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MyUphaar - Kids Content Generator</h1>
+    <form id="questionsForm">
+        <label for="favoriteAnimal">1. What is your child's favorite animal?</label>
+        <input type="text" id="favoriteAnimal" name="favoriteAnimal" required>
+
+        <label for="favoriteColor">2. What is your child's favorite color?</label>
+        <input type="text" id="favoriteColor" name="favoriteColor" required>
+
+        <label for="favoriteActivity">3. What is your child's favorite activity?</label>
+        <input type="text" id="favoriteActivity" name="favoriteActivity" required>
+
+        <label for="favoriteStory">4. What is your child's favorite story or character?</label>
+        <input type="text" id="favoriteStory" name="favoriteStory" required>
+
+        <label for="favoritePlace">5. What is your child's favorite place to visit?</label>
+        <input type="text" id="favoritePlace" name="favoritePlace" required>
+
+        <label for="dislikes">6. Are there any things your child dislikes?</label>
+        <input type="text" id="dislikes" name="dislikes">
+
+        <label for="memories">7. Share a special memory you have with your child:</label>
+        <textarea id="memories" name="memories"></textarea>
+
+        <label for="audio">8. Upload an audio clip of your child's favorite song or story:</label>
+        <input type="file" id="audio" name="audio" accept="audio/*">
+
+        <label for="video">9. Upload a video of your child doing something they love:</label>
+        <input type="file" id="video" name="video" accept="video/*">
+
+        <button type="button" onclick="generateContent()">Generate Content</button>
+    </form>
+
+    <div id="result" class="result" style="display:none;">
+        <h2>Generated Story</h2>
+        <p id="generatedText"></p>
+        <div class="image">
+            <img id="generatedImage" src="" alt="Generated Content">
+        </div>
+    </div>
+</div>
+
+<script>
+    function generateContent() {
+        const favoriteAnimal = document.getElementById('favoriteAnimal').value;
+        const favoriteColor = document.getElementById('favoriteColor').value;
+        const favoriteActivity = document.getElementById('favoriteActivity').value;
+        const favoriteStory = document.getElementById('favoriteStory').value;
+        const favoritePlace = document.getElementById('favoritePlace').value;
+        const dislikes = document.getElementById('dislikes').value;
+        const memories = document.getElementById('memories').value;
+
+        // Placeholder for generative AI integration for text
+        const generatedText = `Once upon a time, there was a ${favoriteAnimal} who loved the color ${favoriteColor}. Every day, the ${favoriteAnimal} would enjoy ${favoriteActivity}. One day, while ${favoriteActivity}, the ${favoriteAnimal} met ${favoriteStory} at ${favoritePlace}. They became best friends and had many adventures together. The ${favoriteAnimal} didn't like ${dislikes}, but always remembered the special times like ${memories}.`;
+
+        // Placeholder for generative AI integration for images (using a sample image link)
+        const generatedImageURL = 'https://via.placeholder.com/400x300.png?text=Generated+Image';
+
+        document.getElementById('generatedText').innerText = generatedText;
+        document.getElementById('generatedImage').src = generatedImageURL;
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
